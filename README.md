@@ -1,2 +1,2 @@
 # Online-Banking
-Using HTML and CSS also Xampp
+Using HTML, CSS and Xampp
