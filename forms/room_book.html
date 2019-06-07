@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Room Booking Form</title>
+	<!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <script>
+        addEventListener("load", function() 
+			{ 
+			   setTimeout(hideURLbar, 0);
+		     }, false); 
+
+		 function hideURLbar()
+			{
+			    window.scrollTo(0,1); 
+			} 
+    </script>
+    
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Online-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+</head>
+
+<body style="background-image: url(images/roomm.jpg);">
+	<div class="main">
+		<div class="main-w3l">
+			<h1 class="logo-w3">Book A Stay!</h1>
+			<div class="w3layouts-main">
+				
+					<form onsubmit="return validate()" name="room_book" action="room_book.php" method="post"><br/>
+						<div style="color: white; text-align: left;"><b>Select Room:</b><br/><br/>
+						<select class="w3layouts-main" name="Room_name">
+							<option value="Luxury Room" selected="">Luxury Room</option>
+							<option value="Luxury Grande Room City View">Luxury Grande Room City View</option>
+							<option value="Holiday Club Room Sea View">Holiday Club Room Sea View</option>
+							<option value="Luxury Suite 1 Bedroom City View">Luxury Suite 1 Bedroom City View</option>
+							<option value="Signature Suite">Signature Suite</option>
+						</select ></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Your User Id:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.html"><italic>Dont Have UserId?</italic></a> <br/><br/>
+						<input type="text" name="User_id" placeholder="User Id" autocomplete="off" /></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Your Password:</b><br/><br/>
+						<input type="password"  name="Password" class="padding" placeholder="Password"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Arrival Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DD/MM/YYYY]<br/><br/>
+						<input type="text" name="Arrival" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Departure Date:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DD/MM/YYYY]<br/><br/>
+						<input type="text" name="Departure" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Number of Rooms:</b><br/><br/>
+						<input type="text" name="Rooms" placeholder="Rooms" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Number of Adults:</b><br/><br/>
+						<input type="text" name="Adults" placeholder="Adults" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Number of Children:</b><br/><br/>
+						<input type="text" name="Children" placeholder="Children" autocomplete="off"/></div><br/><br/>
+
+		<!-- use autocomplete="off" at each textbox-->
+						<input type="submit" value="Submit" name="Submit">
+					</form>
+			</div>
+		</div>
+	</div>	
+
+	<script type="text/javascript">
+		function validate()
+		{
+					// id validations
+					if(document.room_book.User_id.value.trim()=="")
+					{
+						alert("Please provide your User Id");
+						document.room_book.User_id.focus();
+						return false;
+					}
+					else if(isNaN(document.room_book.User_id.value.trim())==true)
+					{
+						alert("User Id must be Numerical");
+						document.room_book.User_id.focus();
+						return false;
+					}
+					else if((document.room_book.User_id.value.trim()).length>3)
+					{
+						alert("Please provide valid User Id");
+						document.room_book.User_id.focus();
+						return false;
+					}
+
+
+					//password validations
+					else if((document.room_book.Password.value.trim())=="")
+					{
+						alert("Password Is required");
+						document.room_book.Password.focus();
+						return false;
+					}
+					else if((document.room_book.Password.value.trim()).length<8)
+					{
+						alert("Password Must contain atleast 8 values");
+						document.room_book.Password.focus();
+						return false;
+					}
+					else if((document.room_book.Password.value.trim()).length>15)
+					{
+						alert("Password Must not be too long");
+						document.room_book.Password.focus();
+						return false;
+					}
+
+
+					//arrival validations
+					else if((document.room_book.Arrival.value.trim())=="")
+					{
+						alert("Arrival date Is required");
+						document.room_book.Arrival.focus();
+						return false;
+					}
+					else if((document.room_book.Arrival.value.trim()).length<10 || (document.room_book.Arrival.value.trim()).length>10)
+					{
+						alert("Please provide valid Arrival Date");
+						document.room_book.Arrival.focus();
+						return false;
+					}
+
+
+					//departure validations
+					else if((document.room_book.Departure.value.trim())=="")
+					{
+						alert("Departure date Is required");
+						document.room_book.Departure.focus();
+						return false;
+					}
+					else if((document.room_book.Departure.value.trim()).length<10 || (document.room_book.Departure.value.trim()).length>10)
+					{
+						alert("Please provide valid Departure Date");
+						document.room_book.Departure.focus();
+						return false;
+					}
+
+
+					//rooms validation
+					else if((document.room_book.Rooms.value.trim())=="")
+					{
+						alert("Plz provide Number of Rooms to book");
+						document.room_book.Rooms.focus();
+						return false;
+					}
+					else if(isNaN(document.room_book.Rooms.value.trim())==true)
+					{
+						alert("Number of rooms must be numerical value");
+						document.room_book.Rooms.focus();
+						return false;
+					}
+					else if((document.room_book.Rooms.value.trim())<1)
+					{
+						alert("Number of room to be book must be atleast 1");
+						document.room_book.Rooms.focus();
+						return false;
+					}
+					else if((document.room_book.Rooms.value.trim())>4)
+					{
+						alert("One can book maximum 4 rooms only");
+						document.room_book.Rooms.focus();
+						return false;
+					}
+
+
+					//adults validations
+					else if((document.room_book.Adults.value.trim())=="")
+					{
+						alert("Plz provide Number of Adults");
+						document.room_book.Adults.focus();
+						return false;
+					}
+					else if(isNaN(document.room_book.Adults.value.trim())==true)
+					{
+						alert("Number of Adults must be numerical value");
+						document.room_book.Adults.focus();
+						return false;
+					}
+					else if((document.room_book.Adults.value.trim())<1)
+					{
+						alert("Please provide valid input");
+						document.room_book.Adults.focus();
+						return false;
+					}
+					else if((document.room_book.Adults.value.trim())>10)
+					{
+						alert("maximum limit is 10 for Adults");
+						document.room_book.Adults.focus();
+						return false;
+					}
+
+
+					//children validations
+					else if((document.room_book.Children.value.trim())=="")
+					{
+						alert("Plz provide Number of Childrens");
+						document.room_book.Children.focus();
+						return false;
+					}
+					else if(isNaN(document.room_book.Children.value.trim())==true)
+					{
+						alert("Number of Children must be numerical value");
+						document.room_book.Children.focus();
+						return false;
+					}
+					else if((document.room_book.Children.value.trim())<1)
+					{
+						alert("Please provide valid input");
+						document.room_book.Children.focus();
+						return false;
+					}
+					else if((document.room_book.Children.value.trim())>5)
+					{
+						alert("maximum limit is 5 for Children");
+						document.room_book.Children.focus();
+						return false;
+					}
+		}
+	</script>
+
+	
+</body>
+</html>

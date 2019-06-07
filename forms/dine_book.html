@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Event Booking Form</title>
+	<!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <script>
+        addEventListener("load", function() 
+			{ 
+			   setTimeout(hideURLbar, 0);
+		     }, false); 
+
+		 function hideURLbar()
+			{
+			    window.scrollTo(0,1); 
+			} 
+    </script>
+    
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Online-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+</head>
+
+<body style="background-image: url(images/dine1.jpg);">
+	<div class="main">
+		<div class="main-w3l">
+			<h1 class="logo-w3">Book A Table</h1>
+			<div class="w3layouts-main">
+				
+					<form onsubmit="return validate()" name="dine_book"action="dine_book.php" method="post"><br/>
+						<div style="color: white; text-align: left;"><b>Select Table:</b><br/><br/>
+						<select class="w3layouts-main" name="Table_name">
+							<option value="Cafe Coacoa" selected="">Cafe Coacoa</option>
+							<option value="Masala Craft">Masala Craft</option>
+							<option value="After Dark">After Dark</option>
+						</select ></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Your User Id:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.html"><italic>Dont Have UserId?</italic></a> <br/><br/>
+						<input type="text" name="User_id" placeholder="User Id" autocomplete="off" /></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Your Password:</b><br/><br/>
+						<input type="password"  name="Password" class="padding" placeholder="Password" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Number of Guests:</b><br/><br/>
+						<input type="text" name="Guest" placeholder="Guests" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Event Date:</b><br/><br/>
+						<input class="w3layouts-main" type="date" name="Date"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Time:</b><br/><br/>
+						<input class="w3layouts-main" type="time" name="Time"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Special Request:</b><br/><br/>
+						<input type="text" name="Request" placeholder="Things You Want Done Additionally"/></div><br/><br/>
+
+		<!-- use autocomplete="off" at each textbox-->
+						<input type="submit" value="Submit" name="Submit">
+					</form>
+			</div>
+		</div>
+	</div>	
+
+	<script type="text/javascript">
+
+			function validate() 
+				{
+		            // id validations
+					if(document.dine_book.User_id.value.trim()=="")
+					{
+						alert("Please provide your User Id");
+						document.dine_book.User_id.focus();
+						return false;
+					}
+					else if(isNaN(document.dine_book.User_id.value.trim())==true)
+					{
+						alert("User Id can't contain characters");
+						document.dine_book.User_id.focus();
+						return false;
+					}
+					else if((document.dine_book.User_id.value.trim()).length>3)
+					{
+						alert("Plz enter valid User Id ");
+						document.dine_book.User_id.focus();
+						return false;
+					}
+
+					
+					//password validations
+					else if((document.dine_book.Password.value.trim())=="")
+					{
+						alert("Password Is required");
+						document.dine_book.Password.focus();
+						return false;
+					}
+					else if((document.dine_book.Password.value.trim()).length<8)
+					{
+						alert("Password Must contain atleast 8 values");
+						document.dine_book.Password.focus();
+						return false;
+					}
+					else if((document.dine_book.Password.value.trim()).length>15)
+					{
+						alert("Password Must not be too long");
+						document.dine_book.Password.focus();
+						return false;
+					}
+
+
+					//guest validations
+					else if((document.dine_book.Guest.value.trim())=="")
+					{
+						alert("Plz provide Number of Guest");
+						document.dine_book.Guest.focus();
+						return false;
+					}
+					else if(isNaN(document.dine_book.Guest.value.trim())==true)
+					{
+						alert("Number of Guest must be numerical value");
+						document.dine_book.Guest.focus();
+						return false;
+					}
+					else if((document.dine_book.Guest.value.trim())==0)
+					{
+						alert("Please provide valid input");
+						document.event_book.Guest.focus();
+						return false;
+					}
+					else if((document.dine_book.Guest.value.trim())>100)
+					{
+						alert("maximum limit is 100 for Guest");
+						document.dine_book.Guest.focus();
+						return false;
+					}
+
+
+
+					
+				}
+
+	</script>
+
+</body>
+</html>

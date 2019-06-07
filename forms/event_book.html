@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Event Booking Form</title>
+	<!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+
+    <script>
+        addEventListener("load", function() 
+			{ 
+			   setTimeout(hideURLbar, 0);
+		     }, false); 
+
+		 function hideURLbar()
+			{
+			    window.scrollTo(0,1); 
+			} 
+    </script>
+    
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Online-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+</head>
+
+<body style="background-image: url(images/eventbg.jpg);">
+	<div class="main">
+		<div class="main-w3l">
+			<h1 class="logo-w3">Plan Your Event!</h1>
+			<div class="w3layouts-main">
+				
+					<form onsubmit="return validate()" name="event_book" action="event_book.php" method="post"><br/>
+						<div style="color: white; text-align: left;"><b>Select Hall:</b><br/><br/>
+						<select class="w3layouts-main" name="Hall_name">
+							<option value="Luxury Room" selected="">Symphony Banquets, Events & Conferences</option>
+							<option value="Symphony Banquets, Events & Conferences">Symphony Banquets, Events & Conferences</option>
+							<option value="The Classroom">The Classroom</option>
+							<option value="Lush The Lawn">Lush The Lawn</option>
+							</select ></div><br/><br/>
+
+
+						<div style="color: white; text-align: left;"><b>Enter Your User Id:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.html"><italic>Dont Have UserId?</italic></a> <br/><br/>
+						<input type="text" name="User_id" placeholder="User Id" autocomplete="off" /></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Your Password:</b><br/><br/>
+						<input type="password"  name="Password" class="padding" placeholder="Password" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Select Event:</b><br/><br/>
+						<select class="w3layouts-main" name="Event_name">
+							<option value="none">Select An Event</option>
+							<option value="Conference/Meeting" selected="">Conference/Meeting</option>
+							<option value="Seminar/Training">Seminar/Training</option>
+							<option value="Social Meetup">Social Meetup</option>
+							<option value="Cocktail Party">Cocktail Party</option>
+							<option value="Marriage">Marriage</option>
+							<option value="Ring Ceremony">Ring Ceremony</option>
+							<option value="Other">Other</option>
+						</select ></div><br/><br/>
+						
+						<div style="color: white; text-align: left;"><b>Enter Number of Guests:</b><br/><br/>
+						<input type="text" name="Guest" placeholder="Guests" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Enter Event Date:</b><br/><br/>
+						<input type="text" name="Event_date"  autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>Start Time:</b><br/><br/>
+						<input type="time" class="w3layouts-main" name="Start_time" autocomplete="off"/></div><br/><br/>
+
+						<div style="color: white; text-align: left;"><b>End Time:</b><br/><br/>
+						<input type="time" class="w3layouts-main" name="End_time"  autocomplete="off"/></div><br/><br/>
+
+		<!-- use autocomplete="off" at each textbox-->
+						<input type="submit" value="Submit" name="Submit">
+					</form>
+			</div>
+		</div>
+	</div>	
+
+
+	<script type="text/javascript">
+
+			function validate() 
+				{
+		            // id validations
+					if(document.event_book.User_id.value.trim()=="")
+					{
+						alert("Please provide your User Id");
+						document.event_book.User_id.focus();
+						return false;
+					}
+					else if(isNaN(document.event_book.User_id.value.trim())==true)
+					{
+						alert("User Id must be Numerical");
+						document.event_book.User_id.focus();
+						return false;
+					}
+					else if((document.event_book.User_id.value.trim()).length>3)
+					{
+						alert("Please provide valid User Id");
+						document.event_book.User_id.focus();
+						return false;
+					}
+
+					//password validations
+					else if((document.event_book.Password.value.trim())=="")
+					{
+						alert("Password Is required");
+						document.event_book.Password.focus();
+						return false;
+					}
+					else if((document.event_book.Password.value.trim()).length<8)
+					{
+						alert("Password Must contain atleast 8 values");
+						document.event_book.Password.focus();
+						return false;
+					}
+					else if((document.event_book.Password.value.trim()).length>15)
+					{
+						alert("Password Must not be too long");
+						document.event_book.Password.focus();
+						return false;
+					}
+
+					//guest validations
+					else if((document.event_book.Guest.value.trim())=="")
+					{
+						alert("Plz provide Number of Guest");
+						document.event_book.Guest.focus();
+						return false;
+					}
+					else if(isNaN(document.event_book.Guest.value.trim())==true)
+					{
+						alert("Number of Guest must be numerical value");
+						document.event_book.Guest.focus();
+						return false;
+					}
+					else if((document.event_book.Guest.value.trim())<1)
+					{
+						alert("Please provide valid input");
+						document.event_book.Guest.focus();
+						return false;
+					}
+					else if((document.event_book.Guest.value.trim())>800)
+					{
+						alert("maximum limit is 800 for Guest");
+						document.event_book.Guest.focus();
+						return false;
+					}
+
+
+					//date validations
+					else if((document.event_book.Event_date.value.trim())=="")
+					{
+						alert("Plz provide date of Event");
+						document.event_book.Event_date.focus();
+						return false;
+					}
+					else if((document.event_book.Event_date.value.trim()).length<10 || (document.event_book.Arrival.value.trim()).length>10)
+					{
+						alert("Please provide valid Arrival Date");
+						document.event_book.Event_date.focus();
+						return false;
+					}
+			}
+
+	</script>
+</body>
+</html>
