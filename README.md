@@ -1,15 +1,19 @@
-Holiday Hotel Website includes :
+# Holiday Hotel Website 
 
-    1. homepage
-    2. Room booking
-    3. Event hall booking
-    4. Facilities provided
-    5. Tourist places near it
+### It includes :
 
-Developed Using :
+  1. homepage
+  2. Room booking
+  3. Event hall booking
+  4. Facilities provided
+  5. Tourist places near it
 
-    1. Bootstrap
-    2. CSS
-    3. Javascript
-    4. PHP
-    5. Xampp
+### Developed Using :
+
+  1. Bootstrap
+  2. CSS
+  3. Javascript
+  4. PHP
+  5. Xampp
+
+## Thank You!
