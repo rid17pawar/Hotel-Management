@@ -1,19 +1,70 @@
 # Holiday Hotel Website 
 
+
+## Description-
+   This website allows customers to book rooms, halls as well as dinner tables in the Hotel. Customer needs to first create his account in website and then he can do booking online. It also provides details about nearby Tourism places. 
+   
 ### It includes :
 
-  1. homepage
-  2. Room booking
-  3. Event hall booking
-  4. Facilities provided
-  5. Tourist places near it
+  - homepage
+  - Room booking
+  - Event hall booking
+  - Facilities provided
+  - Tourist places near it
+  - Sign Up Form
+  - Log In Form
 
-### Developed Using :
+## Technologies Used-
 
-  1. Bootstrap
-  2. CSS
-  3. Javascript
-  4. PHP
-  5. Xampp
+### 1. Front end Technologies:
+  - Bootstrap
+  - HTML
+  - CSS
+  - Javascript
+  
+### 2. Back end Technologies:
+  - PHP
+  
+### 3. Database:
+  - MySQL
+  
+### 4. Webserver:
+  - Xampp
+
+
+## Snapshots-
+
+
+![Website_hotelname](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/homepage1.png)
+
+![Website_rooms](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/homepage2.png)
+
+![Website_halls](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/homepage3.png)
+
+![Website_dine](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/homepage4.png)
+
+![rooms](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/rooms1.png)
+
+![halls](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/halls1.png)
+
+![halls_gallery](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/halls2.png)
+
+![halls_gallery_zoom](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/halls3.png)
+
+![dine_coverpage](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/dine1.png)
+
+![dine](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/dine2.png)
+
+![facilities1](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/facilities1.png)
+
+![facilities2](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/facilities2.png)
+
+![tourist1](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/tourist_places1.png)
+
+![tourist2](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/tourist_places2.png)
+
+![tourist3](https://github.com/rid17pawar/Hotel-Management/blob/master/readmeImages/tourist_places3.png)
+
+
 
 ## Thank You!
